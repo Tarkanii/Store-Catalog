@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.form-title {
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  .form-title {
+    align-self: flex-start;
+  }
+}
+
+.form-input-container {
+  margin-bottom: 25px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.secondary-button  {
+  margin-right: 15px;
+}

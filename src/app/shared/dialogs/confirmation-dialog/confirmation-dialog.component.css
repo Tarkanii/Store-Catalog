@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 250px;
+  margin-top: 20px;
+}
+
+.message {
+  font-size: var(--font-size-medium);
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 700px) {
+
+}

@@ -1,0 +1,27 @@
+<form action="#" class="container" [formGroup]="form">
+  <div class="form-input-container">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-input" formControlName="name">
+    <p class="form-hint" *ngIf="formControl('name')?.errors?.['required'] && formControl('name')?.touched">Required field</p>
+  </div>
+  <div class="form-input-container">
+    <label class="form-label">Price</label>
+    <input type="number" class="form-input" formControlName="price">
+    <p class="form-hint" *ngIf="formControl('price')?.errors?.['required'] && formControl('price')?.touched">Required field</p>
+  </div>
+  <div class="form-input-container">
+    <label class="form-label">Description</label>
+    <input type="text" class="form-input" formControlName="description">
+  </div>
+  <div class="form-input-container">
+    <label class="form-label">Store</label>
+    <select class="form-select" formControlName="store">
+      <option class="form-select-option" [value]="store.id" *ngFor="let store of storeList">{{ store.name }}</option>
+    </select>
+    <p class="form-hint" *ngIf="formControl('store')?.errors?.['required'] && formControl('store')?.touched">Required field</p>
+  </div>
+  <div class="buttons-container">
+    <button class="secondary-button " routerLink="/products">Cancel</button>
+    <button class="accent-button" (click)="submit($event)">Add Product</button>
+  </div>
+</form>

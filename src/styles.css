@@ -1,0 +1,178 @@
+:root {
+  --accent-color: rgb(80, 199, 104);
+  --text-color: rgb(88, 88, 88);
+  --border-color: rgb(88, 88, 88, 0.6);
+  --button-color: #ffffff;
+  --error-color: rgb(255, 47, 47);
+  --font-family: 'Montserrat', sans-serif;
+  --font-size-regular: 18px; 
+  --font-size-medium: 24px; 
+  --font-size-large: 36px; 
+}
+
+body {
+  height: 100%;
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.container {
+  width: 320px;
+  padding: 0 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    width: 600px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.add-button-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--font-size-regular);
+}
+
+.add-button {
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 50%;
+  background: url(./assets/plus.svg) center no-repeat;
+  background-size: 25px;
+  background-color: var(--accent-color);
+}
+
+.accent-button {
+  font-size: var(--font-size-medium);
+  font-family: var(--font-family);
+  color: var(--button-color) ;
+  background-color: var(--accent-color);
+  border: 1px var(--border-color) solid;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.secondary-button {
+  font-size: var(--font-size-medium);
+  font-family: var(--font-family);
+  color: var(--button-color) ;
+  background-color: var(--border-color);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.delete-button {
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 50%;
+  mask: url('./assets/delete.svg') center no-repeat;
+  mask-size: contain;
+  background-color: var(--border-color);
+}
+
+.add-button-container:hover,
+.accent-button:hover,
+.secondary-button:hover,
+.delete-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform linear 200ms;
+}
+
+@media screen and (max-width: 600px) {
+  .dialog-button.accent-button, 
+  .dialog-button.secondary-button {
+    font-size: var(--font-size-regular);
+    padding: 8px 10px;
+  }
+}
+
+.title {
+  font-size: var(--font-size-large);
+}
+
+.form-title {
+  font-size: var(--font-size-large);
+}
+
+.form-input-container {
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: var(--font-size-regular);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  border: 1.5px var(--border-color) solid;
+  outline: none;
+  border-radius: 5px;
+}
+
+.form-select {
+  appearance: none;
+  background: url(./assets/arrow.svg) right 5px top 50% no-repeat;
+}
+
+.form-select-option {
+  cursor: pointer;
+  padding: 10px 10px; 
+}
+
+.form-input.ng-touched.ng-invalid,
+.form-select.ng-touched.ng-invalid {
+  border: 1.5px var(--error-color) solid;
+  transition: border linear 200ms;
+}
+
+.form-label {
+  font-size: var(--font-size-medium);
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-hint {
+  position: absolute;
+  color: var(--error-color);
+  font-weight: 500;
+}

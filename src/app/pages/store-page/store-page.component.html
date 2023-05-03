@@ -1,0 +1,20 @@
+<div class="container">
+  <button class="secondary-button" routerLink="../" >Go Back</button>
+  <h2 class="title" *ngIf="!store">Not Found</h2>
+  <ng-container *ngIf="store">
+    <h2 class="title">{{ store.name }}</h2>
+    <p class="text">{{ store.description || 'No description added' }}</p>
+    <h2 class="title">Address</h2>
+    <p class="text">{{ store.address }}</p>
+    <h2 class="title">Products</h2>
+    <p class="text" *ngIf="!products.length">No products added</p>
+    <app-card 
+      class="product-card"
+      type="product" 
+      format="short" 
+      [product]="product"
+      *ngFor="let product of products"
+    >
+    </app-card>
+  </ng-container>
+</div>

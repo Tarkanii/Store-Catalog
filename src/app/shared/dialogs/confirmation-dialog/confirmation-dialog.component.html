@@ -1,0 +1,5 @@
+<p class="message" [innerHTML]="data.message"></p>
+<div class="buttons-container">
+  <button class="dialog-button secondary-button" matDialogClose>Cancel</button>
+  <button class="dialog-button accent-button" matDialogClose (click)="data.callback()">Do it</button>
+</div>

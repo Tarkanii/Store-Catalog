@@ -1,0 +1,10 @@
+<div class="card" [ngClass]="format">
+  <h3 class="card-title">{{ type === 'store' ? store.name : product.name }}</h3>
+  <p class="card-text" *ngIf="type === 'store'">{{ store.address }}</p>
+  <p class="card-text" *ngIf="type === 'product' && format === 'full'">{{ store.name }}</p>
+  <p class="card-text" *ngIf="type === 'product'">{{ product.price | price: '$' }}</p>
+  <button 
+    *ngIf="format !== 'short' || type !== 'store'"
+    class="delete-button" 
+    (click)="remove($event, type === 'store' ? store.id : product.id)"></button>
+</div>

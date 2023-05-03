@@ -1,0 +1,42 @@
+.card {
+  position: relative;
+  padding: 15px 15px 50px;
+  height: 100%;
+  border: 1px var(--border-color) solid;
+  border-radius: 5px;
+}
+
+.card.short {
+  display: grid;
+  grid-auto-columns: 2fr 1fr 0.5fr;
+  grid-auto-flow: column;
+  height: auto;
+  padding: 15px 10px;
+}
+
+.card.short .delete-button {
+  position: relative;
+  bottom: unset;
+  right: unset;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 3px black;
+}
+
+.card-title {
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+}
+
+.card-text {
+  font-size: var(--font-size-regular);
+  margin-top: 5px
+}
+
+.delete-button {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+}

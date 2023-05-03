@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+.container > *:not(:first-child) {
+  margin-top: 20px;
+}
+
+.text {
+  font-size: var(--font-size-medium);
+}
+
+.product-card {
+  max-width: 400px;
+  width: 100%;
+}

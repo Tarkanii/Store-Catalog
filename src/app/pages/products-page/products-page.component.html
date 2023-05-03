@@ -1,0 +1,16 @@
+<div class="container">
+  <h2 class="title" *ngIf="!productList.length">No products added</h2>
+  <div class="grid">
+    <app-card 
+      type="product" 
+      [routerLink]="product.id"
+      [product]="product" 
+      [store]="getStore(product.storeId)" 
+      *ngFor="let product of productList">
+    </app-card>
+  </div>
+  <a routerLink="add-product" class="add-button-container link">
+    <button class="add-button"></button>
+    <p class="button-label">Add product</p>
+  </a>
+</div>

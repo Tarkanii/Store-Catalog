@@ -1,0 +1,26 @@
+:host {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding: 100px 0 20px;
+}
+
+.add-button-container {
+  top: 10px;
+  right: 20px;
+}
+
+.add-button {
+  margin-bottom: 5px;
+}

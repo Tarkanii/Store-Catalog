@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px var(--border-color) solid;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-list-element {
+  font-size: var(--font-size-medium);
+}
+
+.nav-list-element:hover {
+  font-weight: 500;
+}
+
+.nav-list-element:not(:last-child) {
+  margin-right: 20px;
+}
+
+.link {
+  color: var(--text-color);
+}
+
+.link.active {
+  font-weight: 500;
+}
+
+.store-icon {
+  stroke: var(--accent-color);
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}

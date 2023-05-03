@@ -1,0 +1,31 @@
+<form action="#" class="container" [formGroup]="form">
+  <div class="form-input-container">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-input" formControlName="name">
+    <p class="form-hint" *ngIf="formControl('name')?.errors?.['required'] && formControl('name')?.touched">Required field</p>
+  </div>
+  <div class="form-input-container">
+    <label class="form-label">Description</label>
+    <input type="text" class="form-input" formControlName="description">
+  </div>
+  <h2 class="form-title">Address</h2>
+  <div class="form-input-container">
+    <label class="form-label">City</label>
+    <input type="text" class="form-input" formControlName="city">
+    <p class="form-hint" *ngIf="formControl('city')?.errors?.['required'] && formControl('city')?.touched">Required field</p>
+  </div>
+  <div class="form-input-container">
+    <label class="form-label">Street</label>
+    <input type="text" class="form-input" formControlName="street">
+    <p class="form-hint" *ngIf="formControl('street')?.errors?.['required'] && formControl('street')?.touched">Required field</p>
+  </div>
+  <div class="form-input-container">
+    <label class="form-label">Number</label>
+    <input type="text" class="form-input" formControlName="number">
+    <p class="form-hint" *ngIf="formControl('number')?.errors?.['required'] && formControl('number')?.touched">Required field</p>
+  </div>
+  <div class="buttons-container">
+    <button class="secondary-button" routerLink="/stores">Cancel</button>
+    <button class="accent-button" (click)="submit($event)">Add Store</button>
+  </div>
+</form>
