@@ -1,17 +1,19 @@
 <form action="#" class="container" [formGroup]="form">
+  <h2 class="form-title">Product information</h2>
   <div class="form-input-container">
     <label class="form-label">Name</label>
-    <input type="text" class="form-input" formControlName="name">
+    <input appFormInput type="text" class="form-input" formControlName="name">
     <p class="form-hint" *ngIf="formControl('name')?.errors?.['required'] && formControl('name')?.touched">Required field</p>
   </div>
   <div class="form-input-container">
     <label class="form-label">Price</label>
-    <input type="number" class="form-input" formControlName="price">
+    <input appFormInput [numberOnly]="true" type="number" class="form-input" formControlName="price">
     <p class="form-hint" *ngIf="formControl('price')?.errors?.['required'] && formControl('price')?.touched">Required field</p>
+    <p class="form-hint" *ngIf="formControl('price')?.errors?.['min'] && formControl('price')?.touched">Minimal price is 0</p>
   </div>
   <div class="form-input-container">
     <label class="form-label">Description</label>
-    <input type="text" class="form-input" formControlName="description">
+    <input appFormInput type="text" class="form-input" formControlName="description">
   </div>
   <div class="form-input-container">
     <label class="form-label">Store</label>

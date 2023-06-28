@@ -3,7 +3,7 @@ export const defaultStores = [
     id: "d37b5a82-1116-4ace-8e89-c90e9f251325",
     name: "Waitrose",
     description: "Waitrose is a chain of British supermarkets, which forms the food retail division of Britain's largest employee-owned retailer.",
-    address: "Hitchin , Bedford Rd"
+    address: "Hitchin, Bedford Rd"
   },
   {
     id: "7acb869f-d784-4ab4-952f-8d9824d76288",

@@ -27,7 +27,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  private getCallBack(id: string): any {
+  private getCallback(id: string): any {
     return () => {
       if (this.type === 'store') {
         this.storeService.removeStore(id);
@@ -51,7 +51,7 @@ export class CardComponent implements OnInit {
     this.dialog.open(ConfirmationDialogComponent, {
       data: {
         message: this.getMessage(),
-        callback: this.getCallBack(id)
+        callback: this.getCallback(id)
       }
     })
     

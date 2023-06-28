@@ -50,8 +50,8 @@ export class AddStorePageComponent implements OnInit {
     if (!this.addingStoreForm?.valid) return;
     
     const { name, description, city, street, number } = this.addingStoreForm?.value;
-    const address = `${city}, ${street} ${number ?? ''}`;
-    this.storeService.addStore(name.trim(), address.trim(), description.trim());
+    const address = `${city}, ${street} ${number ?? ''}`.trim();
+    this.storeService.addStore(name, address, description);
     this.dialog.open(InfoDialogComponent, {
       data: {
         message: 'Store was successfully added',

@@ -29,7 +29,7 @@ export class AddProductPageComponent implements OnInit {
   private initForm(): void {
     this.addingProductForm = this.formBuilder.group({
       name: ['', Validators.required],
-      price: [null, Validators.required],
+      price: [null, [Validators.required, Validators.min(0)]],
       description: '',
       store: ['', Validators.required]
     })
@@ -53,7 +53,7 @@ export class AddProductPageComponent implements OnInit {
     this.addingProductForm?.updateValueAndValidity();
     if (!this.addingProductForm?.valid) return;
     const { name, price, store, description } = this.addingProductForm.value;
-    this.productService.addProduct(name?.trim(), price, store, description?.trim());
+    this.productService.addProduct(name, price, store, description);
     this.dialog.open(InfoDialogComponent, {
       data: {
         message: 'Product was successfully added',

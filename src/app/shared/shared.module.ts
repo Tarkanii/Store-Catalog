@@ -8,6 +8,7 @@ import { StoreIconComponent } from "./components/store-icon/store-icon.component
 import { ConfirmationDialogComponent } from "./dialogs/confirmation-dialog/confirmation-dialog.component";
 import { InfoDialogComponent } from "./dialogs/info-dialog/info-dialog.component";
 import { PricePipe } from './pipes/price.pipe';
+import { FormInputDirective } from './directives/form-input.directive';
 
 
 
@@ -17,7 +18,8 @@ import { PricePipe } from './pipes/price.pipe';
     StoreIconComponent,
     ConfirmationDialogComponent,
     InfoDialogComponent,
-    PricePipe
+    PricePipe,
+    FormInputDirective
   ],
   imports: [
     ReactiveFormsModule,
@@ -32,7 +34,8 @@ import { PricePipe } from './pipes/price.pipe';
     AppRoutingModule,
     CardComponent,
     StoreIconComponent,
-    PricePipe
+    PricePipe,
+    FormInputDirective
   ]
 })
 export class SharedModule { }

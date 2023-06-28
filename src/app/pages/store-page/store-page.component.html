@@ -8,7 +8,8 @@
     <p class="text">{{ store.address }}</p>
     <h2 class="title">Products</h2>
     <p class="text" *ngIf="!products.length">No products added</p>
-    <app-card 
+    <app-card
+      [routerLink]="'/products/' + product.id"
       class="product-card"
       type="product" 
       format="short" 
