@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { v4 } from 'uuid';
 import { BehaviorSubject } from 'rxjs';
-import { IStore } from '../shared/interfaces/store';
-import { IProduct } from '../shared/interfaces/product';
+import { IProduct, IStore } from '../shared/interfaces';
 import { ProductService } from './product.service';
 
 @Injectable({
@@ -50,5 +49,4 @@ export class StoreService {
   public getAllStores(): IStore[] {
     return this.stores$.value;
   }
-
 }

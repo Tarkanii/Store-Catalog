@@ -3,8 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProductService } from 'src/app/services/product.service';
 import { StoreService } from 'src/app/services/store.service';
 import { ConfirmationDialogComponent } from 'src/app/shared/dialogs/confirmation-dialog/confirmation-dialog.component';
-import { IProduct } from 'src/app/shared/interfaces/product';
-import { IStore } from 'src/app/shared/interfaces/store';
+import { IProduct, IStore } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-card',

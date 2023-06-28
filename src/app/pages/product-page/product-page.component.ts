@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 import { StoreService } from 'src/app/services/store.service';
-import { IProduct } from 'src/app/shared/interfaces/product';
-import { IStore } from 'src/app/shared/interfaces/store';
+import { IProduct, IStore } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-product-page',
@@ -26,8 +25,8 @@ export class ProductPageComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((res: { [key: string]: string }) => {
-        this.product = this.productService.getProduct(res?.['id']);
+      .subscribe((params: { [key: string]: string }) => {
+        this.product = this.productService.getProduct(params?.['id']);
         if (!this.product) return;
         this.store = this.storeService.getStore(this.product?.storeId);
       });

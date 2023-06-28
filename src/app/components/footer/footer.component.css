@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  justify-content: center;
+  border-top: 1px var(--border-color) solid;
+}
+
+.footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.button-label {
+  margin-top: 5px;
+}

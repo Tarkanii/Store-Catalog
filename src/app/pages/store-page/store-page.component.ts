@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject, map, switchMap, takeUntil } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 import { StoreService } from 'src/app/services/store.service';
-import { IProduct } from 'src/app/shared/interfaces/product';
-import { IStore } from 'src/app/shared/interfaces/store';
+import { IProduct, IStore } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-store-page',

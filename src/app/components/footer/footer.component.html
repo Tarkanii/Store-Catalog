@@ -1,0 +1,10 @@
+<div class="footer container">
+  <a *ngIf="buttonToShow === 'stores'" routerLink="/stores/add-store" class="add-button-container link">
+    <button class="add-button"></button>
+    <p class="button-label">Add store</p>
+  </a>
+  <a *ngIf="buttonToShow === 'products'" routerLink="/products/add-product" class="add-button-container link">
+    <button class="add-button"></button>
+    <p class="button-label">Add product</p>
+  </a>
+</div>

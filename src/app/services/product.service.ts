@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { v4 } from 'uuid';
 import { BehaviorSubject } from 'rxjs';
-import { IProduct } from '../shared/interfaces/product';
+import { IProduct } from '../shared/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -39,12 +39,11 @@ export class ProductService {
     return this.productList.find((product: IProduct) => product.id === id) || null;
   }
 
-  public getAllProducts(): IProduct[] {
+  private getAllProducts(): IProduct[] {
     return this.products$.value;
   }
 
   public getProductsForStore(storeId: string): IProduct[] {
     return this.getAllProducts().filter((product: IProduct) => product.storeId === storeId);
   }
-
 }

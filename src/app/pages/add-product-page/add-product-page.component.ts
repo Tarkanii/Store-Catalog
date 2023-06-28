@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProductService } from 'src/app/services/product.service';
 import { StoreService } from 'src/app/services/store.service';
 import { InfoDialogComponent } from 'src/app/shared/dialogs/info-dialog/info-dialog.component';
-import { IStore } from 'src/app/shared/interfaces/store';
+import { IStore } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-add-product-page',

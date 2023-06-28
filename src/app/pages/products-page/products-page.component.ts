@@ -1,19 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 import { StoreService } from 'src/app/services/store.service';
-import { IProduct } from 'src/app/shared/interfaces/product';
-import { IStore } from 'src/app/shared/interfaces/store';
+import { IProduct, IStore} from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-products-page',
   templateUrl: './products-page.component.html',
   styleUrls: ['./products-page.component.css']
 })
-export class ProductsPageComponent implements OnInit, OnDestroy {
+export class ProductsPageComponent implements OnInit {
 
-  public productList: IProduct[] = [];
-  private unsubscribe$: Subject<void> = new Subject();
+  public productList: Observable<IProduct[]> = this.productService.products$;
   
   constructor(
     private productService: ProductService,
@@ -21,16 +19,6 @@ export class ProductsPageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.productService.products$
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((productList: IProduct[]) => {
-        this.productList = productList;
-      })
-  }
-
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
   }
 
   public getStore(storeId: string): IStore {

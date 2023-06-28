@@ -1,12 +1,7 @@
 <div class="container">
-  <h2 class="title" *ngIf="!storeList.length">No stores added</h2>
+  <h2 class="title" *ngIf="!(storeList | async)?.length">No stores added</h2>
   <div class="grid">
-    <app-card [routerLink]="store.id" *ngFor="let store of storeList" [store]="store" type="store">
+    <app-card [routerLink]="store.id" *ngFor="let store of storeList | async" [store]="store" type="store">
     </app-card>
   </div>
-  
-  <a routerLink="add-store" class="add-button-container link">
-    <button class="add-button"></button>
-    <p class="button-label">Add store</p>
-  </a>
 </div>
